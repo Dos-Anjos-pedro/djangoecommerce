@@ -1,2 +1,6 @@
+
+# ignorar a pasta venv
 venv/
+
+# ignorar a pasta .git
 .git/
