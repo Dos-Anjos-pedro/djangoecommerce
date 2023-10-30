@@ -4,3 +4,5 @@ venv/
 
 # ignorar a pasta .git
 .git/
+
+local_settings.py
