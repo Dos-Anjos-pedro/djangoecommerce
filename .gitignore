@@ -5,4 +5,6 @@ venv/
 # ignorar a pasta .git
 .git/
 
+notebook/
+
 local_settings.py
