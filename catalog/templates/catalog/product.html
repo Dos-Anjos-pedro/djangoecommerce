@@ -1,3 +1,6 @@
+<div class="container" style="margin-top: 45px;">
+    
+</div>
 {% extends "base.html" %}
 
 {%block title %}
@@ -14,6 +17,10 @@
       </a>
   </div>
   <div class="col-sm-8">
+    <p class="text-left">
+      <a href="{% url 'checkout:create_cartitem' product.slug %}" class="btn 
+      btn-success">Adicionar ao Carrinho</a>
+    </p>
      {{product.description | linebreaks}}
   </div>
 </div>

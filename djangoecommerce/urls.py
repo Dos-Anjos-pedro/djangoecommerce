@@ -13,5 +13,6 @@ urlpatterns = [
     path('sair/', LogoutView.as_view(next_page='index'), name='logout'), 
     path('catalogo/', include(('catalog.urls', 'catalog'), namespace='catalog')),
     path('conta/', include(('accounts.urls', 'catalog'), namespace='accounts')),
+    path('compras/', include(('checkout.urls', 'checkout'), namespace='checkout')),
     path('admin/', admin.site.urls),
 ]

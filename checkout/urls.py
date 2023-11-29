@@ -1,0 +1,19 @@
+from django.urls import path, include
+
+from django.urls import re_path
+
+from . import views
+
+app_name = 'checkout'
+
+
+
+urlpatterns = [
+     re_path(r'^carrinho/adicionar/(?P<slug>[\w_-]+)/$', views.create_cartitem, name='create_cartitem'),
+     re_path(r'^carrinho/$', views.cart_item, name='cart_item'),
+     re_path(r'^finalizando/$', views.checkout, name='checkout'),
+
+
+
+]
+

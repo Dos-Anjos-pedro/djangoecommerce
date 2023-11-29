@@ -6,6 +6,7 @@ from .forms import ContactForm
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import View, TemplateView, CreateView
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 
 User = get_user_model()
 
@@ -16,14 +17,16 @@ index = IndexView.as_view()
       
   
 def contact(request):
-    form = ContactForm(request.POST or None)
     success = False
-
+    form = ContactForm(request.POST or None)
+    
     if request.method == 'POST':
         if form.is_valid():
             form.send_mail()
             success = True
             form = ContactForm()
+        else:
+            messages.error(request, 'Formulário Inválido')
 
     context = {
         'form': form,
